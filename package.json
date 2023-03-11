@@ -1,0 +1,22 @@
+{
+  "name": "dnc-boardtasks-back",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./index.js",
+    "autoDoc": "node ./swagger/autoGenDoc.js",
+    "dev": "npx nodemon ./swagger/autoGenDoc.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "express": "~4.16.1",
+    "mongoose": "^7.0.1",
+    "mongoose-to-swagger": "^1.4.0",
+    "morgan": "~1.9.1",
+    "swagger-autogen": "^2.23.1",
+    "swagger-ui-express": "^4.6.2"
+  }
+}
