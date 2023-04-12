@@ -7,8 +7,15 @@ const swaggerAutogen = require('swagger-autogen')({
     language: 'pt-BR',
 });
 
-const outputFile = './swagger_output.json';
-const endpointsFiles = ['../index.js', '../src/routes.js'];
+let outputFile = './swagger_output.json';
+let endpointsFiles = ['../index.js', '../src/routes.js'];
+
+
+if(String(process.env.OS).toLocaleLowerCase().includes("windows")){
+    outputFile = './swagger/swagger_output.json';
+    endpointsFiles = ['./index.js', './src/routes.js'];
+}
+
 
 let doc = {
     info: {
