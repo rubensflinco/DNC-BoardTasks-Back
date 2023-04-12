@@ -29,7 +29,8 @@ router.get('/obter/tarefa/:id', authUser, conectarBancoDados, async function (re
   try {
     // #swagger.tags = ['Comentario']
     // #swagger.description = "Endpoint para obter todos comentarios de uma taerfa."
-    const respostaBD = await EsquemaComentario.find({ tarefa: id }).populate('usuarioCriador');
+    const { id } = req.params;
+    const respostaBD = await EsquemaComentario.find({ tarefa: id }).populate('usuarioCriador').populate('tarefa');
 
     res.status(200).json({
       status: "OK",
